@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-color: #064306;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.cir {
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3aff9c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(var(--xpos), var(--ypos));
+}
+
+section {
+    width: 85%;
+    max-height: 100vh;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+section h2 {
+    width: 100%;
+    margin: 30px 15px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    z-index: 100;
+}
+
+section img {
+    width: calc(100% / 4);
+    height: 22vh;
+    border-radius: 25px;
+    clip-path: inset(20px 10px round 12px);
+    filter: blur(20px);
+    transition: all .3s linear;
+}
+
+img:hover {
+    scale: 1.25;
+    z-index: 2;
+    clip-path: inset(0px 0px round 12px);
+    border: 10px solid #3aff9c;
+    filter: blur(0);
+}
+
+p {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width: 650px) {
+    section {
+        width: 95%;
+        margin: 5px auto;
+        padding: 5px;
+        display: block;
+        text-align: center;
+    }
+    section img {
+        width: 30%;
+        height: 22vh;
+        border-radius: 25px;
+        clip-path: inset(20px 10px round 12px);
+        filter: blur(20px);
+        transition: all .3s linear;
+    }
+    img:hover {
+        scale: 1.2;
+        z-index: 5;
+        clip-path: inset(0px 0px round 12px);
+        border: 10px solid #3aff9c;
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 450px) {
+    .cir {
+        display: none;
+    }
+    section {
+        width: 95%;
+        margin: 5px auto;
+        padding: 5px;
+        display: block;
+        text-align: center;
+    }
+    section img {
+        width: 45%;
+        height: 22vh;
+        border-radius: 25px;
+        clip-path: inset(20px 10px round 12px);
+        filter: blur(20px);
+        transition: all .3s linear;
+    }
+}
+
